@@ -1,0 +1,52 @@
+## searching files
+
+## find: access, modify, change time
+## +2 over 2 days, -2 within 2 days, exactly 2 days
+## +2M over 2 MB
+## -type f(ile), d(irectory)
+man find
+find -atime +2 -type f -size +2M
+find -mtime -2 -type f 
+find -ctime  2 -type f
+
+## find and grep
+## $ end of filename
+## ^ beginning of filename
+cd dir; find -iname mydoc*
+find dir/ | grep myDoc
+find | grep -i mydoc
+find /etc | grep .conf$
+find /etc | grep ^file
+find /var/log
+
+## search a word in all the files and directories
+## -r recursive, -i case-insensitive, -n number, -w whole-word
+man grep
+grep -rin word dir/
+grep word /var/log/*.log
+
+## file information
+stat filename
+file filename
+
+## list files
+## -h human-readable, -l long, -r reverse, -a all
+ls -lh
+ls -ltr
+ls -la
+
+## view files
+head filename
+tail filename
+less filename
+cat -n filename
+nano -v filename
+vim -R filename
+strings filename
+
+## edit file
+nano filename
+vim filename
+
+
+
