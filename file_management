@@ -12,18 +12,22 @@ find -ctime  2 -type f
 ## find and grep
 ## $ end of filename
 ## ^ beginning of filename
+## character classes: alnum, alpha, digit, lower, upper
 cd dir; find -iname mydoc*
 find dir/ | grep myDoc
 find | grep -i mydoc
 find /etc | grep .conf$
 find /etc | grep ^file
-find /var/log
+find /var/log | grep log$
+find dir/ | grep [A-Z][a-z][0-9]
+find dir/ | grep [[:upper:]][[:lower:]][[:digit:]]
 
 ## search a word in all the files and directories
 ## -r recursive, -i case-insensitive, -n number, -w whole-word
 man grep
 grep -rin word dir/
 grep word /var/log/*.log
+
 
 ## file information
 stat filename
